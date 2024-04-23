@@ -13,3 +13,50 @@ I am cataloging my summer project in converting an old pc into a server for a ho
 - SystemType: 64bit
 - Storage: 1TB HDD
 - Graphics: Intel HD Graphic
+
+## Setting Up the Server
+
+To set up your server, follow these steps:
+
+1. **Install Node.js**: If not already installed, download and install Node.js from [nodejs.org](https://nodejs.org/).
+
+2. **Clone the Repository**: Clone the ServerProject repository to your local machine:
+
+    ```bash
+    git clone https://github.com/your-username/ServerProject.git
+    ```
+
+3. **Navigate to Project Directory**: Change your current directory to the cloned ServerProject directory:
+
+    ```bash
+    cd ServerProject
+    ```
+
+4. **Install Dependencies**: Install the required dependencies by running the following command:
+
+    ```bash
+    npm install
+    ```
+
+## Running the Server
+
+To run the server, follow these steps:
+
+1. **Start the Server**: Run the following command to start the server:
+
+    ```bash
+    npm start
+    ```
+
+2. **Access the Server**: Once the server is running, you can access it in your web browser at `http://localhost:3000`.
+
+
+## Additional Instructions
+
+- Make sure to configure any firewall settings to allow incoming connections to the server on port 3000.
+- For security reasons, consider using HTTPS and implementing authentication mechanisms for your web applications.
+- Refer to the documentation of individual applications for specific usage instructions.
+
+## Attributions
+ChatRoom built from [LAN-chat-project](https://github.com/AswinchristoJ/LAN-chat-project/tree/master)
+

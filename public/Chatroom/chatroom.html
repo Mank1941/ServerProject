@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="styles_chatroom.css">
+</head>
+<body>
+    <h1>Chat Room</h1>
+
+    <div>
+        <label for="usernameInput">Username:</label>
+        <input type="text" id="usernameInput" placeholder="Enter your username..." value="anon">
+      </div>
+  
+      <div id="messageBoard">
+        <!-- Messages will be displayed here -->
+      </div>
+  
+      <input type="text" id="messageInput" placeholder="Type your message...">
+      <button id="sendMessageBtn">Send</button>
+  
+      <script src="/socket.io/socket.io.js"></script>
+      <script type="module" src="client.js"></script>
+</body>
+</html>
