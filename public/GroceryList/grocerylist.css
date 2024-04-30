@@ -1,0 +1,36 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}    
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    cursor: pointer;
+}
+
+th {
+     background-color: rgb(100, 95, 95);
+     color: white;
+}
+
+#dateform, #groceryform {
+    margin-bottom: 20px;
+}
+
+/* tr:nth-child(even) {background-color: lightgrey;} */
+/* tr:nth-child(odd) {background-color: white} */
+tr:hover {background-color: coral;}
+
+.selected {
+    background-color: darkgrey;
+    color: black;
+}
+
+#removeItemsBtn {
+    margin-bottom: 20px;
+}

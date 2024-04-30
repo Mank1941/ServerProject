@@ -38,6 +38,24 @@ To set up your server, follow these steps:
     npm install
     ```
 
+## Setting Up Mongo Database
+1. **Connect to MongoDB:**
+   - Make sure you have MongoDB installed and running on your system.
+   - Open a terminal or command prompt.
+
+2. **Launch the MongoDB Shell:**
+   - Type `mongo` in the terminal and press Enter to start the MongoDB shell.
+
+3. **Create the Database:**
+   ```bash
+   use VinnicomeBoyz
+   ```
+
+
+These instructions will guide you through creating the "VinnicomeBoyz" database and the "GroceryCollection" collection in MongoDB.
+
+
+
 ## Running the Server
 
 To run the server, follow these steps:
@@ -45,7 +63,7 @@ To run the server, follow these steps:
 1. **Start the Server**: Run the following command to start the server:
 
     ```bash
-    npm start
+    npm scr/server.mjs [local|host]
     ```
 
 2. **Access the Server**: Once the server is running, you can access it in your web browser at `http://localhost:3000`.
