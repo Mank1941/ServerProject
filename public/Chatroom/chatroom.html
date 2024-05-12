@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Chat Room</title>
-    <link rel="stylesheet" href="styles_chatroom.css">
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <title>Chat Room</title>
+      <link rel="stylesheet" type="text/css" href="styles_chatroom.css">
+      <link rel="stylesheet" type="text/css"  href="/styles_home.css">
+      <!-- <base href="/public/Chatroom/chatroom.html"> -->
+  </head>
+  <header>
+    <img src="/Images/header.jpg">
+  </header>
 <body>
+  <div class="tab">
+    <a href="/">Home</a>
+    <a href="/">About</a>
+    <a href="/">Services</a>
+    <a class="active" href="">Chatroom</a>
+    <a href="/GroceryList/grocerylist.html">Grocery List</a>
+  </div>
+
+  <div id="chatRoom">
     <h1>Chat Room</h1>
 
     <div>
-        <label for="usernameInput">Username:</label>
-        <input type="text" id="usernameInput" placeholder="Enter your username..." value="anon">
-      </div>
-  
-      <div id="messageBoard">
-        <!-- Messages will be displayed here -->
-      </div>
-  
-      <input type="text" id="messageInput" placeholder="Type your message...">
-      <button id="sendMessageBtn">Send</button>
-  
-      <script src="/socket.io/socket.io.js"></script>
-      <script type="module" src="client.js"></script>
+      <label for="usernameInput">Username:</label>
+      <input type="text" id="usernameInput" placeholder="Enter your username..." value="anon">
+    </div>
+
+    <div id="messageBoard">
+      <!-- Messages will be displayed here -->
+    </div>
+
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button id="sendMessageBtn">Send</button>
+  </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="client.js"></script>
 </body>
 </html>
