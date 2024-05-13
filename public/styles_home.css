@@ -32,8 +32,13 @@ img {
     text-decoration: none;
   }
 
+.tab a.split {
+  float: right;
+  margin-right: 10px;
+}
+
 /* Change background color of buttons on hover */
-.tab a:hover {
+.tab .open-button:hover, a:hover {
     background-color: #21b14c;
     color: wheat;
   }
@@ -44,6 +49,6 @@ img {
     color: wheat;
   }
 
-h1 , h3{
+h1 ,  h3{
   color: #1f2121;
 }
