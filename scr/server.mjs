@@ -18,7 +18,7 @@ try {
     if ((hostType != 'local') && (hostType != 'host')){
         throw new Error('Valid arguments: local or host')
     }
-    if (!isValidIpAddress(HOST)) {
+    if ((HOST != undefined) && (!isValidIpAddress(HOST))){
         throw new Error(ipAddress + " is a valid IP address.");
     }
 

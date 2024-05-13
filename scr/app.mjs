@@ -3,7 +3,8 @@ import http from 'http';
 import { Server } from 'socket.io';
 import bodyParser from 'body-parser';
 
-import * as chatroom from './chatroom/chatroom.js';
+
+import * as chatroom from './chatroom/chatroom_server.js';
 import { closeDBConnection, connectToDB } from './util/mongo_db.mjs';
 
 import groceryRoutes from './groceryList/groceryRoutes.mjs';
@@ -30,11 +31,13 @@ app.use(bodyParser.json());
 // Grocery List Routes
 app.use('/grocery', groceryRoutes);
 
+export { io };
+
 let running_server;
 
 export async function createServer(hostType, HOST=undefined){
     try {
-        chatroom.setup(io);
+        // chatroom.setup(io);
         await connectToDB();
 
         process.on('SIGINT', () => {
@@ -42,7 +45,7 @@ export async function createServer(hostType, HOST=undefined){
             running_server.close(async function() {
                 let msg = await closeDBConnection();
                 console.log(msg);
-                chatroom.clearStoreFile();
+                // chatroom.clearStoreFile();
                 process.exit(0);
             })
             // process.exit(32);
