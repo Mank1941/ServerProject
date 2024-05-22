@@ -31,6 +31,11 @@ app.use(bodyParser.json());
 // Grocery List Routes
 app.use('/grocery', groceryRoutes);
 
+//For App connectivity
+app.get('/data', (req, res) => {
+    res.json({ message: 'Hello from Node.js server!' });
+  });
+
 export { io };
 
 let running_server;
