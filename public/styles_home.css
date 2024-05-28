@@ -4,7 +4,7 @@ body, html {
   background-color: #e5daba;
 }
 
-img {
+header img {
     max-width: 100%; /* Set the width of the image */
     height: auto; /* Maintain the aspect ratio */
 }
@@ -52,3 +52,16 @@ img {
 h1 ,  h3{
   color: #1f2121;
 }
+
+footer {
+  background-color: #ff4f00;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer img {
+  display: block; 
+  margin: 0 auto;
+}
+
