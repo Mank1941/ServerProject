@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Expense Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .transaction-form, .transaction-posts {
+            margin-bottom: 20px;
+        }
+        .transaction-post {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .transaction-post h3 {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        .transaction-post p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="transaction-form">
+        <h2>Post a Transaction</h2>
+        <form id="transactionForm">
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="cost">Cost:</label>
+                <input type="number" id="cost" name="cost" required>
+            </div>
+            <div>
+                <label for="share">Share:</label>
+                <input type="number" id="share" name="share" required>
+            </div>
+            <div>
+                <label for="roommates">Pending:</label><br>
+                <input type="checkbox" id="roommate1" name="roommates" value="Roommate 1">
+                <label for="roommate1">Roommate 1</label><br>
+                <input type="checkbox" id="roommate2" name="roommates" value="Roommate 2">
+                <label for="roommate2">Roommate 2</label><br>
+                <input type="checkbox" id="roommate3" name="roommates" value="Roommate 3">
+                <label for="roommate3">Roommate 3</label>
+            </div>
+            <div>
+                <label for="date">Date Posted:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">Post Transaction</button>
+        </form>
+    </div>
+    <div class="transaction-posts">
+        <h2>Transactions</h2>
+        <div id="postsContainer"></div>
+    </div>
+
+    <script>
+        document.getElementById('transactionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const cost = document.getElementById('cost').value;
+            const share = document.getElementById('share').value;
+            const date = document.getElementById('date').value;
+
+            let pendingRoommates = [];
+            document.querySelectorAll('input[name="roommates"]:checked').forEach((checkbox) => {
+                pendingRoommates.push(checkbox.value);
+            });
+
+            const postContainer = document.getElementById('postsContainer');
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('transaction-post');
+
+            const pendingList = pendingRoommates.map((roommate) => `
+                <label>
+                    <input type="checkbox" name="${roommate}">
+                    ${roommate}
+                </label>
+            `).join('<br>');
+
+            postDiv.innerHTML = `
+                <h3>${title}</h3>
+                <p><strong>Cost:</strong> $${cost}</p>
+                <p><strong>Share:</strong> $${share}</p>
+                <p><strong>Date Posted:</strong> ${date}</p>
+                <p><strong>Pending:</strong><br>${pendingList}</p>
+            `;
+
+            postContainer.appendChild(postDiv);
+
+            // Reset the form
+            document.getElementById('transactionForm').reset();
+        });
+    </script>
+</body>
+</html>
